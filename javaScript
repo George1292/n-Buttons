@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buttons</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        #container{
+            text-align: center;
+        }
+    </style>
+  </head>      
+  <body>
+    <center>
+       <h2>Choose a button</h2>
+    </center>
+            <br><br><br><br>
+          <script>
+              let n = parseInt(prompt('Choose a number'));
+              let random = Math.floor((Math.random() * 3) + 1);
+              for (let i = 1; i <= n; ++i){
+              const btn = document.createElement('button');
+              btn.innerText = 'Button ' + i;
+              document.body.appendChild(btn);
+              btn.setAttribute('number', i);
+              console.log(btn.getAttribute('number'));
+              btn.addEventListener('click', () => {
+                if (btn.getAttribute('number') == random){
+                  alert('You won');
+                } else{
+                  alert('You lost');
+                }
+              });
+              }
+            </script> 
+  </body>
+</html> 
